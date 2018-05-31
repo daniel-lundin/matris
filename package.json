@@ -1,0 +1,17 @@
+{
+  "name": "matris",
+  "version": "0.0.1",
+  "description": "4x4 matrix multiplication",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "transform",
+    "matrix"
+  ],
+  "author": "d-dog@d-dog.se",
+  "license": "MIT"
+}
