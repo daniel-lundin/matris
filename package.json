@@ -1,6 +1,6 @@
 {
   "name": "matris",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "4x4 matrix multiplication",
   "main": "index.js",
   "module": "index.js",
