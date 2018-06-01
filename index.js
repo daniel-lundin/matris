@@ -1,24 +1,24 @@
-function assignedMatrixMultiplication(a, b, res) {
+function assignedMatrixMultiplication(x, y, res) {
   // Unrolled loop
-  res[0] = a[0] * b[0] + a[1] * b[4] + a[2] * b[8] + a[3] * b[12];
-  res[1] = a[0] * b[1] + a[1] * b[5] + a[2] * b[9] + a[3] * b[13];
-  res[2] = a[0] * b[2] + a[1] * b[6] + a[2] * b[10] + a[3] * b[14];
-  res[3] = a[0] * b[3] + a[1] * b[7] + a[2] * b[11] + a[3] * b[15];
+  res[0] = x[0] * y[0] + x[1] * y[4] + x[2] * y[8] + x[3] * y[12];
+  res[1] = x[0] * y[1] + x[1] * y[5] + x[2] * y[9] + x[3] * y[13];
+  res[2] = x[0] * y[2] + x[1] * y[6] + x[2] * y[10] + x[3] * y[14];
+  res[3] = x[0] * y[3] + x[1] * y[7] + x[2] * y[11] + x[3] * y[15];
 
-  res[4] = a[4] * b[0] + a[5] * b[4] + a[6] * b[8] + a[7] * b[12];
-  res[5] = a[4] * b[1] + a[5] * b[5] + a[6] * b[9] + a[7] * b[13];
-  res[6] = a[4] * b[2] + a[5] * b[6] + a[6] * b[10] + a[7] * b[14];
-  res[7] = a[4] * b[3] + a[5] * b[7] + a[6] * b[11] + a[7] * b[15];
+  res[4] = x[4] * y[0] + x[5] * y[4] + x[6] * y[8] + x[7] * y[12];
+  res[5] = x[4] * y[1] + x[5] * y[5] + x[6] * y[9] + x[7] * y[13];
+  res[6] = x[4] * y[2] + x[5] * y[6] + x[6] * y[10] + x[7] * y[14];
+  res[7] = x[4] * y[3] + x[5] * y[7] + x[6] * y[11] + x[7] * y[15];
 
-  res[8] = a[8] * b[0] + a[9] * b[4] + a[10] * b[8] + a[11] * b[12];
-  res[9] = a[8] * b[1] + a[9] * b[5] + a[10] * b[9] + a[11] * b[13];
-  res[10] = a[8] * b[2] + a[9] * b[6] + a[10] * b[10] + a[11] * b[14];
-  res[11] = a[8] * b[3] + a[9] * b[7] + a[10] * b[11] + a[11] * b[15];
+  res[8] = x[8] * y[0] + x[9] * y[4] + x[10] * y[8] + x[11] * y[12];
+  res[9] = x[8] * y[1] + x[9] * y[5] + x[10] * y[9] + x[11] * y[13];
+  res[10] = x[8] * y[2] + x[9] * y[6] + x[10] * y[10] + x[11] * y[14];
+  res[11] = x[8] * y[3] + x[9] * y[7] + x[10] * y[11] + x[11] * y[15];
 
-  res[12] = a[12] * b[0] + a[13] * b[4] + a[14] * b[8] + a[15] * b[12];
-  res[13] = a[12] * b[1] + a[13] * b[5] + a[14] * b[9] + a[15] * b[13];
-  res[14] = a[12] * b[2] + a[13] * b[6] + a[14] * b[10] + a[15] * b[14];
-  res[15] = a[12] * b[3] + a[13] * b[7] + a[14] * b[11] + a[15] * b[15];
+  res[12] = x[12] * y[0] + x[13] * y[4] + x[14] * y[8] + x[15] * y[12];
+  res[13] = x[12] * y[1] + x[13] * y[5] + x[14] * y[9] + x[15] * y[13];
+  res[14] = x[12] * y[2] + x[13] * y[6] + x[14] * y[10] + x[15] * y[14];
+  res[15] = x[12] * y[3] + x[13] * y[7] + x[14] * y[11] + x[15] * y[15];
 
   return res;
 }
@@ -156,29 +156,30 @@ function assignIdentity(matrix) {
   matrix[15] = 1;
 }
 
-function copyArray(a, b) {
-  b[0] = a[0];
-  b[1] = a[1];
-  b[2] = a[2];
-  b[3] = a[3];
-  b[4] = a[4];
-  b[5] = a[5];
-  b[6] = a[6];
-  b[7] = a[7];
-  b[8] = a[8];
-  b[9] = a[9];
-  b[10] = a[10];
-  b[11] = a[11];
-  b[12] = a[12];
-  b[13] = a[13];
-  b[14] = a[14];
-  b[15] = a[15];
+function moveArray(src, dest) {
+  dest[0] = src[0];
+  dest[1] = src[1];
+  dest[2] = src[2];
+  dest[3] = src[3];
+  dest[4] = src[4];
+  dest[5] = src[5];
+  dest[6] = src[6];
+  dest[7] = src[7];
+  dest[8] = src[8];
+  dest[9] = src[9];
+  dest[10] = src[10];
+  dest[11] = src[11];
+  dest[12] = src[12];
+  dest[13] = src[13];
+  dest[14] = src[14];
+  dest[15] = src[15];
 }
+
+const a = new Float32Array(16);
+const b = new Float32Array(16);
 
 export function createMatrix() {
   var data = new Float32Array(16);
-  var a = new Float32Array(16);
-  var b = new Float32Array(16);
   assignIdentity(data);
   return data;
 }
@@ -196,42 +197,42 @@ export function clear(data) {
 }
 
 export function translate(data, x = 0, y = 0, z = 0) {
-  copyArray(data, a);
+  moveArray(data, a);
   assignTranslate(b, x, y, z);
   assignedMatrixMultiplication(a, b, data);
   return data;
 }
 
 export function rotateX(data, radians) {
-  copyArray(data, a);
+  moveArray(data, a);
   assignRotateX(b, radians);
   assignedMatrixMultiplication(a, b, data);
   return data;
 }
 
 export function rotateY(data, radians) {
-  copyArray(data, a);
+  moveArray(data, a);
   assignRotateY(b, radians);
   assignedMatrixMultiplication(a, b, data);
   return data;
 }
 
 export function rotateZ(data, radians) {
-  copyArray(data, a);
+  moveArray(data, a);
   assignRotateZ(b, radians);
   assignedMatrixMultiplication(a, b, data);
   return data;
 }
 
 export function scale(data, x, y) {
-  copyArray(data, a);
+  moveArray(data, a);
   assignScale(b, x, y);
   assignedMatrixMultiplication(a, b, data);
   return data;
 }
 
 export function skew(data, ax, ay) {
-  copyArray(data, a);
+  moveArray(data, a);
   assignSkew(b, ax, ay);
   assignedMatrixMultiplication(a, b, data);
   return data;
