@@ -178,7 +178,7 @@ function moveArray(src, dest) {
 const a = new Float32Array(16);
 const b = new Float32Array(16);
 
-export function createMatrix() {
+export function createMatris() {
   var data = new Float32Array(16);
   assignIdentity(data);
   return data;
