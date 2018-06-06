@@ -183,6 +183,7 @@ export function createMatrix() {
   assignIdentity(data);
   return data;
 }
+
 export function asCSS(data) {
   var css = "matrix3d(";
   for (var i = 0; i < 15; ++i) {
@@ -199,41 +200,35 @@ export function clear(data) {
 export function translate(data, x = 0, y = 0, z = 0) {
   moveArray(data, a);
   assignTranslate(b, x, y, z);
-  assignedMatrixMultiplication(a, b, data);
-  return data;
+  assignedMatrixMultiplication(b, a, data);
 }
 
 export function rotateX(data, radians) {
   moveArray(data, a);
   assignRotateX(b, radians);
-  assignedMatrixMultiplication(a, b, data);
-  return data;
+  assignedMatrixMultiplication(b, a, data);
 }
 
 export function rotateY(data, radians) {
   moveArray(data, a);
   assignRotateY(b, radians);
-  assignedMatrixMultiplication(a, b, data);
-  return data;
+  assignedMatrixMultiplication(b, a, data);
 }
 
 export function rotateZ(data, radians) {
   moveArray(data, a);
   assignRotateZ(b, radians);
-  assignedMatrixMultiplication(a, b, data);
-  return data;
+  assignedMatrixMultiplication(b, a, data);
 }
 
 export function scale(data, x, y) {
   moveArray(data, a);
   assignScale(b, x, y);
-  assignedMatrixMultiplication(a, b, data);
-  return data;
+  assignedMatrixMultiplication(b, a, data);
 }
 
 export function skew(data, ax, ay) {
   moveArray(data, a);
   assignSkew(b, ax, ay);
-  assignedMatrixMultiplication(a, b, data);
-  return data;
+  assignedMatrixMultiplication(b, a, data);
 }
