@@ -2,10 +2,11 @@
   "name": "matris",
   "version": "0.0.5",
   "description": "4x4 matrix multiplication",
-  "main": "index.mjs",
+  "main": "index.js",
   "module": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "rollup index.mjs -f cjs > index.js"
   },
   "keywords": [
     "css",
@@ -13,5 +14,9 @@
     "matrix"
   ],
   "author": "d-dog@d-dog.se",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.60.0"
+  },
+  "files": ["index.js", "index.mjs"]
 }
