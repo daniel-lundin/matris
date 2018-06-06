@@ -197,6 +197,16 @@ export function clear(data) {
   assignIdentity(data);
 }
 
+export function fromCSS(cssString) {
+  const cells = cssString
+    .replace("matrix3d(", "")
+    .replace(")", "")
+    .split(",");
+  const matris = createMatris();
+  cells.forEach((cell, index) => (matris[index] = parseFloat(cell)));
+  return matris;
+}
+
 export function translate(data, x = 0, y = 0, z = 0) {
   moveArray(data, a);
   assignTranslate(b, x, y, z);
