@@ -1,4 +1,4 @@
-function assignedMatrixMultiplication(x, y, res) {
+export function multiply(x, y, res) {
   // Unrolled loop
   res[0] = x[0] * y[0] + x[1] * y[4] + x[2] * y[8] + x[3] * y[12];
   res[1] = x[0] * y[1] + x[1] * y[5] + x[2] * y[9] + x[3] * y[13];
@@ -210,35 +210,35 @@ export function fromCSS(cssString) {
 export function translate(data, x = 0, y = 0, z = 0) {
   moveArray(data, a);
   assignTranslate(b, x, y, z);
-  assignedMatrixMultiplication(b, a, data);
+  multiply(b, a, data);
 }
 
 export function rotateX(data, radians) {
   moveArray(data, a);
   assignRotateX(b, radians);
-  assignedMatrixMultiplication(b, a, data);
+  multiply(b, a, data);
 }
 
 export function rotateY(data, radians) {
   moveArray(data, a);
   assignRotateY(b, radians);
-  assignedMatrixMultiplication(b, a, data);
+  multiply(b, a, data);
 }
 
 export function rotateZ(data, radians) {
   moveArray(data, a);
   assignRotateZ(b, radians);
-  assignedMatrixMultiplication(b, a, data);
+  multiply(b, a, data);
 }
 
 export function scale(data, x, y) {
   moveArray(data, a);
   assignScale(b, x, y);
-  assignedMatrixMultiplication(b, a, data);
+  multiply(b, a, data);
 }
 
 export function skew(data, ax, ay) {
   moveArray(data, a);
   assignSkew(b, ax, ay);
-  assignedMatrixMultiplication(b, a, data);
+  multiply(b, a, data);
 }
